@@ -1,0 +1,12 @@
+.product-card {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0.5em;
+}
+
+.media {
+    width: 100%;
+    height: auto;
+}
