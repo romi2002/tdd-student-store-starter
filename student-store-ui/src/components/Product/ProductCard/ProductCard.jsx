@@ -5,15 +5,14 @@ import {Link} from 'react-router-dom'
 export default function ProductCard({product,
                                     productId,
                                     quantity,
-                                    handleAddItemToCart = ()=>{console.log("Add item")},
-                                    handleRemoveItemToCart = ()=>{console.log("Remove item")},
+                                    handleAddItemToCart,
+                                    handleRemoveItemToCart,
                                     showDescription}){
     const currencyFormatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
     })
 
-    console.log(product)
     const priceString = currencyFormatter.format(product.price)
 
     return (
@@ -27,10 +26,10 @@ export default function ProductCard({product,
                 </Link>
             </div>
             <div>
-                <button className={'add'} onClick={handleAddItemToCart}>Add</button>
-                <button className={'remove'} onClick={handleRemoveItemToCart}>Remove</button>
+                <button className={'add'} onClick={() => {handleAddItemToCart(productId)}}>Add</button>
+                <button className={'remove'} onClick={() => {handleRemoveItemToCart(productId)}}>Remove</button>
             </div>
-            <span className={'product-quantity'}>0</span>
+            <span className={'product-quantity'}>{quantity}</span>
         </div>
     )
 }

@@ -1,24 +1,15 @@
 import * as React from "react"
 import "./Home.css"
 import ProductGrid from "../Product/ProductGrid/ProductGrid";
-import {useState, useEffect} from "react";
-import axios from "axios";
+import Hero from "../Hero/Hero";
+import Navbar from "../Navbar/Navbar";
 
-export default function Home() {
-    const [products, setProduct] = useState(null)
-
-    useEffect(() => {
-        axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
-            setProduct(res.data.products)
-            console.log(res.data.products)
-        })
-    }, [])
-
-
+export default function Home(props) {
     return (
         <div className="home">
             <p>Home</p>
-            <ProductGrid products={products}/>
+            <Hero/>
+            <ProductGrid {...props}/>
         </div>
     )
 }
