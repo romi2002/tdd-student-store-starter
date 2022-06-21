@@ -8,6 +8,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import ProductDetail from "../Product/ProductDetail/ProductDetail";
 import {useState, useEffect} from "react";
 import axios from "axios";
+import NotFound from "../NotFound/NotFound";
 
 export default function App() {
     const [products, setProduct] = useState([])
@@ -48,6 +49,7 @@ export default function App() {
         <div className="app">
             <BrowserRouter>
                 <Routes>
+                    <Route path="*" element={<NotFound/>}/>
                     <Route path="/" element={
                         <>
                             <main>

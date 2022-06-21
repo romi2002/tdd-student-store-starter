@@ -13,6 +13,8 @@ export default function ProductDetail({}){
         axios.get('https://codepath-store-api.herokuapp.com/store/' + productId).then(res => {
             setProduct(res.data.product)
             console.log(res.data.product)
+        }).catch((error) => {
+            console.log("Error!")
         })
     }, [productId])
 
