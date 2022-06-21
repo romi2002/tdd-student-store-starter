@@ -1,0 +1,17 @@
+div.icon-button {
+    margin: 0.25em;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: lightblue;
+    padding: 10px 20px;
+    border-radius: 16px;
+}
+
+span.icon-button {
+    padding-right: 0.5em;
+}
+
+div.button-inactive {
+    background-color: red;
+}

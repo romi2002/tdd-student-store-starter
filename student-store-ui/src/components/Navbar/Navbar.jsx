@@ -1,7 +1,7 @@
 import * as React from "react"
 import Logo from "../Logo/Logo";
 import "./Navbar.css"
-import CategoryButton from "../CategoryButton/CategoryButton";
+import IconButton from "../CategoryButton/IconButton";
 import {FaLaptop, FaPaperclip, FaTshirt, FaHamburger} from "react-icons/all";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -15,22 +15,22 @@ export default function Navbar({
             <p>Navbar</p>
             <Logo imgSrc={"https://via.placeholder.com/300.png"}/>
             <div className='filters'>
-                <CategoryButton
+                <IconButton
                     onSelectedHandler={() => categorySelectedHandler('clothing')}
                     icon={<FaTshirt/>}
                     text={"Clothing"}
                     isActive={selectedCategories.includes('clothing')}/>
-                <CategoryButton
+                <IconButton
                     onSelectedHandler={() => categorySelectedHandler('accessories')}
                     icon={<FaPaperclip/>}
                     text={"Accessories"}
                     isActive={selectedCategories.includes('accessories')}/>
-                <CategoryButton
+                <IconButton
                     onSelectedHandler={() => categorySelectedHandler('tech')}
                     icon={<FaLaptop/>}
                     text={"Technology"}
                     isActive={selectedCategories.includes('tech')}/>
-                <CategoryButton
+                <IconButton
                     onSelectedHandler={() => categorySelectedHandler('food')}
                     icon={<FaHamburger/>}
                     text={"Food"}

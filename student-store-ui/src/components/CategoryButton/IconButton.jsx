@@ -1,19 +1,19 @@
 import * as React from "react"
-import "./CategoryButton.css"
+import "./IconButton.css"
 
 /*
 Creates a button with an icon used to filter out categories
  */
-export default function CategoryButton({
+export default function IconButton({
                                            onSelectedHandler,
                                            icon,
                                            text,
                                            isActive
                                        }) {
     return (
-        <div className={isActive ? 'category-button' : 'category-button button-inactive'}>
-            <button
-                onClick={onSelectedHandler}>{text}</button>
+        <div className={isActive ? 'icon-button' : 'button-inactive icon-button'}
+            onClick={onSelectedHandler}>
+            <span className='icon-button'>{text}</span>
             {icon}
         </div>)
 }
