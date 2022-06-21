@@ -11,7 +11,6 @@ export default function ProductPriceList({
     })
 
     const subtotal = shoppingCart.length ? shoppingCart.slice(1).reduce((total, quantity, id) => {
-        console.log(`${total} + ${quantity} * ${products[id].price}`)
         if (quantity && quantity !== 0) return total + quantity * products[id].price
         else return total
     }) : 0;
@@ -22,10 +21,8 @@ export default function ProductPriceList({
         {shoppingCart && shoppingCart.slice(1).map((quantity, index) => {
             const product = products[index]
             const cost = quantity * product.price;
-            console.log(`product: ${product} product cost: ${product.price} cost: ${cost} quantity: ${quantity}`)
-            console.log(product)
             //TODO Format items
-            return (quantity &&
+            if(quantity !== 0) return (
                 <div key={'product-price-list-' + index}>
                     <h6 key={'product-price-list-name-' + index}>{'Name:' + product.name}</h6>
                     <h6 key={'product-price-list-quantity-' + index}>{'Quantity: ' + quantity}</h6>

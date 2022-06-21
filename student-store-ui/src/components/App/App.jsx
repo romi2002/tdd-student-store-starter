@@ -20,27 +20,21 @@ export default function App() {
     useEffect(() => {
         axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
             setProduct(res.data.products)
-            console.log(res.data.products)
             setShoppingCart(Array(res.data.products.length).fill(0))
         })
     }, [])
 
     const addItemToCart = (id) => {
-        console.log("Adding item: " + id)
         let newShoppingCart = [...shoppingCart]
         if (newShoppingCart[id]) {
-            console.log(newShoppingCart[id])
             newShoppingCart[id] += 1
         } else {
-            console.log("THIS")
             newShoppingCart[id] = 1
         }
-        console.log(newShoppingCart)
         setShoppingCart(newShoppingCart)
     }
 
     const removeItemFromCart = (id) => {
-        console.log("Removing item: " + id)
         let newShoppingCart = [...shoppingCart]
         if (newShoppingCart[id] && newShoppingCart[id] > 0) {
             newShoppingCart[id] -= 1
@@ -49,7 +43,6 @@ export default function App() {
     }
 
     const categorySelectedHandler = (category) => {
-        console.log(category)
         var newCategories = [...selectedCategories]
         const index = newCategories.indexOf(category)
         if (index !== -1) {
@@ -58,7 +51,6 @@ export default function App() {
         } else {
             newCategories.push(category)
         }
-        console.log(newCategories)
         setSelectedCategory(newCategories)
     }
 
@@ -71,7 +63,6 @@ export default function App() {
                         <>
                             <main>
                                 <Sidebar isOpen={isOpen} handleOnToggle={() => {
-                                    console.log("Toggle")
                                     setOpen(!isOpen)
                                 }} shoppingCart={shoppingCart}
                                          products={products}/>

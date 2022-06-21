@@ -11,8 +11,6 @@ export default function ProductGrid({
                                     }) {
     return (<div className={"product-grid"}>
         {products !== null && products.map((product, id) => {
-                console.log(selectedCategories)
-                console.log(product.category)
                 if (selectedCategories.includes(product.category)) {
                     return <ProductCard key={"product-card-" + id}
                                         handleAddItemToCart={handleAddItemToCart}

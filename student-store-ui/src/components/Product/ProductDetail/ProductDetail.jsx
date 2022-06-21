@@ -14,6 +14,7 @@ export default function ProductDetail({}) {
             setProduct(res.data.product)
             console.log(res.data.product)
         }).catch((error) => {
+            //TODO Handle request error
             console.log("Error!")
         })
     }, [productId])

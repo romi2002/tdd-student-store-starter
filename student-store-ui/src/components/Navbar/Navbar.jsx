@@ -8,7 +8,6 @@ export default function Navbar({
                                    selectedCategories,
                                    categorySelectedHandler
                                }) {
-    console.log('selected categories: ' + selectedCategories)
     return (
         <nav className="navbar">
             <p>Navbar</p>
