@@ -15,6 +15,7 @@ export default function App() {
     const [products, setProduct] = useState([])
     const [isOpen, setOpen] = useState(false)
     const [shoppingCart, setShoppingCart] = useState([])
+    const [selectedCategory, setSelectedCategory] = useState(null)
 
     useEffect(() => {
         axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
@@ -60,7 +61,7 @@ export default function App() {
                                 }} shoppingCart={shoppingCart}
                                 products={products}/>
                                 <div className='content'>
-                                    <Navbar/>
+                                    <Navbar selectedCategory={selectedCategory}/>
                                     <Home handleAddItemToCart={addItemToCart}
                                           handleRemoveItemToCart={removeItemFromCart}
                                           shoppingCart={shoppingCart}
