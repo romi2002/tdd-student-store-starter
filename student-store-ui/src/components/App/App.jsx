@@ -16,6 +16,7 @@ export default function App() {
     const [isOpen, setOpen] = useState(false)
     const [shoppingCart, setShoppingCart] = useState([])
     const [selectedCategories, setSelectedCategory] = useState(['clothing', 'accessories', 'tech', 'food'])
+    const [searchBar, setSearchBar] = useState('')
 
     useEffect(() => {
         axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
@@ -54,6 +55,14 @@ export default function App() {
         setSelectedCategory(newCategories)
     }
 
+    const handleSearchSubmit = (event) => {
+        event.preventDefault()
+    }
+
+    const handleSearchChange = (event) => {
+        setSearchBar(event.target.value)
+    }
+
     return (
         <div className="app">
             <BrowserRouter>
@@ -68,12 +77,15 @@ export default function App() {
                                          products={products}/>
                                 <div className='content'>
                                     <Navbar selectedCategories={selectedCategories}
-                                            categorySelectedHandler={categorySelectedHandler}/>
+                                            categorySelectedHandler={categorySelectedHandler}
+                                            handleSearchSubmit={handleSearchSubmit}
+                                            handleSearchChange={handleSearchChange}/>
                                     <Home handleAddItemToCart={addItemToCart}
                                           handleRemoveItemToCart={removeItemFromCart}
                                           shoppingCart={shoppingCart}
                                           products={products}
                                           selectedCategories={selectedCategories}
+                                          searchTerm={searchBar}
                                     />
                                 </div>
                             </main>

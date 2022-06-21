@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./ShoppingCart.css"
 import {FaShoppingCart} from "react-icons/all";
-import ProductPriceList from "../Product/ProductPriceList/ProductPriceList";
+import ShoppingCartProductList from "../Product/ProductPriceList/ShoppingCartProductList";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import {useState} from "react";
 
@@ -17,7 +17,7 @@ export default function ShoppingCart({products, shoppingCart}) {
                     <span className='notification'>No items added to cart yet. Start shopping now!</span>
                 ) :
                 <>
-                    <ProductPriceList products={products} shoppingCart={shoppingCart}/>
+                    <ShoppingCartProductList products={products} shoppingCart={shoppingCart}/>
                     <button onClick={() => setCheckoutModal(!openCheckoutModal)}>Checkout!</button>
                     <CheckoutForm isOpen={openCheckoutModal}
                                   handleOnCloseCheckout={() => setCheckoutModal(false)}

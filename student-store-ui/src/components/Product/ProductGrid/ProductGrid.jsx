@@ -7,11 +7,14 @@ export default function ProductGrid({
                                         handleAddItemToCart,
                                         handleRemoveItemToCart,
                                         shoppingCart,
-                                        selectedCategories
+                                        selectedCategories,
+                                        searchTerm
                                     }) {
     return (<div className={"product-grid"}>
         {products !== null && products.map((product, id) => {
-                if (selectedCategories.includes(product.category)) {
+                console.log(searchTerm)
+                const isInSearch = searchTerm === '' || product.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+                if (selectedCategories.includes(product.category) && isInSearch) {
                     return <ProductCard key={"product-card-" + id}
                                         handleAddItemToCart={handleAddItemToCart}
                                         handleRemoveItemToCart={handleRemoveItemToCart}

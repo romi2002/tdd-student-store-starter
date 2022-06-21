@@ -3,10 +3,12 @@ import Logo from "../Logo/Logo";
 import "./Navbar.css"
 import CategoryButton from "../CategoryButton/CategoryButton";
 import {FaLaptop, FaPaperclip, FaTshirt, FaHamburger} from "react-icons/all";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function Navbar({
                                    selectedCategories,
-                                   categorySelectedHandler
+                                   categorySelectedHandler,
+                                   handleSearchSubmit, handleSearchChange
                                }) {
     return (
         <nav className="navbar">
@@ -33,6 +35,8 @@ export default function Navbar({
                     icon={<FaHamburger/>}
                     text={"Food"}
                     isActive={selectedCategories.includes('food')}/>
+                <SearchBar handleSubmit={handleSearchSubmit}
+                           handleSearchChange={handleSearchChange}/>
             </div>
         </nav>
     )

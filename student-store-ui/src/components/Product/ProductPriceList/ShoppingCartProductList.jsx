@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./ProductPriceList.css"
 
-export default function ProductPriceList({
+export default function ShoppingCartProductList({
                                              products,
                                              shoppingCart
                                          }) {

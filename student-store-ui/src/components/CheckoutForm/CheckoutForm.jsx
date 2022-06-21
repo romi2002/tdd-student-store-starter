@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./CheckoutForm.css"
 import Modal from 'react-modal'
-import ProductPriceList from "../Product/ProductPriceList/ProductPriceList";
+import ShoppingCartProductList from "../Product/ProductPriceList/ShoppingCartProductList";
 import {useState} from "react";
 
 Modal.setAppElement('#root')
@@ -47,7 +47,7 @@ export default function CheckoutForm({
                            value={checkoutForm.name}
                            onChange={handleOnCheckoutFormChange}/>
                 </label>
-                <ProductPriceList
+                <ShoppingCartProductList
                     products={products}
                     shoppingCart={shoppingCart}/>
                 <label>

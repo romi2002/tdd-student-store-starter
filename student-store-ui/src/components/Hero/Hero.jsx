@@ -5,7 +5,7 @@ export default function Hero(props) {
     return (
         <div className='hero'>
             <span className='intro'>Welcome!</span>
-            <img className='hero-img' src='https://via.placeholder.com/300.png'/>
+            <h1>Hero goes here</h1>
         </div>
     )
 }
