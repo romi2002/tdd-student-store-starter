@@ -1,11 +1,11 @@
 import * as React from "react"
 import "./ProductDetail.css"
 import {useEffect, useState} from "react";
-import { Routes, Route, useParams } from 'react-router-dom';
+import {Routes, Route, useParams} from 'react-router-dom';
 import axios from "axios";
 import ProductView from "../ProductView/ProductView";
 
-export default function ProductDetail({}){
+export default function ProductDetail({}) {
     const {productId} = useParams()
     const [product, setProduct] = useState(null)
 
@@ -21,8 +21,8 @@ export default function ProductDetail({}){
     return (
         <div className={'product-detail'}>
             {product === null ?
-            <h1 className='loading'>Loading...</h1> :
-            <ProductView productId={productId} product={product}/>}
+                <h1 className='loading'>Loading...</h1> :
+                <ProductView productId={productId} product={product}/>}
         </div>
     )
 }

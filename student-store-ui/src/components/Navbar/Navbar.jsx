@@ -4,8 +4,10 @@ import "./Navbar.css"
 import CategoryButton from "../CategoryButton/CategoryButton";
 import {FaLaptop, FaPaperclip, FaTshirt, FaHamburger} from "react-icons/all";
 
-export default function Navbar({selectedCategories,
-                               categorySelectedHandler}) {
+export default function Navbar({
+                                   selectedCategories,
+                                   categorySelectedHandler
+                               }) {
     console.log('selected categories: ' + selectedCategories)
     return (
         <nav className="navbar">

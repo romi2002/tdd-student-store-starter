@@ -53,7 +53,7 @@ export default function CheckoutForm({
                 <label>
                     I accept the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">terms and conditions</a>
                     <input type='checkbox' id='terms-and-conds-check'
-                    onChange={(e) => setTermsAndCond(e.target.checked)}></input>
+                           onChange={(e) => setTermsAndCond(e.target.checked)}></input>
                 </label>
                 <button className='checkout-button'
                         disabled={!termsAndConditionsAccepted}

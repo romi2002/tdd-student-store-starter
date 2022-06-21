@@ -15,7 +15,7 @@ export default function App() {
     const [products, setProduct] = useState([])
     const [isOpen, setOpen] = useState(false)
     const [shoppingCart, setShoppingCart] = useState([])
-    const [selectedCategories, setSelectedCategory] = useState(['clothing','accessories','tech','food'])
+    const [selectedCategories, setSelectedCategory] = useState(['clothing', 'accessories', 'tech', 'food'])
 
     useEffect(() => {
         axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
@@ -41,7 +41,7 @@ export default function App() {
     const removeItemFromCart = (id) => {
         console.log("Removing item: " + id)
         let newShoppingCart = [...shoppingCart]
-        if(newShoppingCart[id] && newShoppingCart[id] > 0){
+        if (newShoppingCart[id] && newShoppingCart[id] > 0) {
             newShoppingCart[id] -= 1
         }
         setShoppingCart(newShoppingCart)
@@ -51,7 +51,7 @@ export default function App() {
         console.log(category)
         var newCategories = [...selectedCategories]
         const index = newCategories.indexOf(category)
-        if(index !== -1){
+        if (index !== -1) {
             //Remove category
             newCategories.splice(index, 1);
         } else {
@@ -73,10 +73,10 @@ export default function App() {
                                     console.log("Toggle")
                                     setOpen(!isOpen)
                                 }} shoppingCart={shoppingCart}
-                                products={products}/>
+                                         products={products}/>
                                 <div className='content'>
                                     <Navbar selectedCategories={selectedCategories}
-                                            categorySelectedHandler ={categorySelectedHandler}/>
+                                            categorySelectedHandler={categorySelectedHandler}/>
                                     <Home handleAddItemToCart={addItemToCart}
                                           handleRemoveItemToCart={removeItemFromCart}
                                           shoppingCart={shoppingCart}

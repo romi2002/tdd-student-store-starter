@@ -32,7 +32,7 @@ export default function ProductPriceList({
                     <h6>{'Quantity: ' + quantity}</h6>
                     <h6>{'Cost: ' + currencyFormatter.format(cost)}</h6>
                 </div>
-                )
+            )
         })}
         <div>
             <span>{'Subtotal: ' + currencyFormatter.format(subtotal)}</span>

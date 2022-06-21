@@ -2,12 +2,14 @@ import * as React from "react"
 import "./ProductCard.css"
 import {Link} from 'react-router-dom'
 
-export default function ProductCard({product,
-                                    productId,
-                                    quantity,
-                                    handleAddItemToCart,
-                                    handleRemoveItemToCart,
-                                    showDescription}){
+export default function ProductCard({
+                                        product,
+                                        productId,
+                                        quantity,
+                                        handleAddItemToCart,
+                                        handleRemoveItemToCart,
+                                        showDescription
+                                    }) {
     const currencyFormatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -26,8 +28,14 @@ export default function ProductCard({product,
                 </Link>
             </div>
             <div>
-                <button className={'add'} onClick={() => {handleAddItemToCart(productId)}}>Add</button>
-                <button className={'remove'} onClick={() => {handleRemoveItemToCart(productId)}}>Remove</button>
+                <button className={'add'} onClick={() => {
+                    handleAddItemToCart(productId)
+                }}>Add
+                </button>
+                <button className={'remove'} onClick={() => {
+                    handleRemoveItemToCart(productId)
+                }}>Remove
+                </button>
             </div>
             <span className={'product-quantity'}>{quantity}</span>
         </div>

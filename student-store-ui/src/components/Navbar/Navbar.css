@@ -3,11 +3,11 @@
     width: 90vw;
     display: flex;
     align-items: center;
-    top:0;
+    top: 0;
     position: sticky;
 }
 
-.navbar .filters{
+.navbar .filters {
     background-color: red;
     display: flex;
     flex-direction: row;
