@@ -11,7 +11,7 @@ export default function CheckoutForm({
                                          shoppingCart,
                                          products,
                                          checkoutForm = {
-                                             'email': 'test',
+                                             'email': 'email@fb.com',
                                              'name': 'abiel'
                                          },
                                          handleOnCheckoutFormChange = () => console.log("change"),

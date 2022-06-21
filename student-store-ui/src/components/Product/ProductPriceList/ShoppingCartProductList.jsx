@@ -1,5 +1,5 @@
 import * as React from "react"
-import "./ProductPriceList.css"
+import "./ShoppingCartProductList.css"
 
 export default function ShoppingCartProductList({
                                              products,
@@ -23,17 +23,17 @@ export default function ShoppingCartProductList({
             const cost = quantity * product.price;
             //TODO Format items
             if(quantity !== 0) return (
-                <div key={'product-price-list-' + index}>
-                    <h6 key={'product-price-list-name-' + index}>{'Name:' + product.name}</h6>
-                    <h6 key={'product-price-list-quantity-' + index}>{'Quantity: ' + quantity}</h6>
-                    <h6 key={'product-price-list-cost-' + index}>{'Cost: ' + currencyFormatter.format(cost)}</h6>
+                <div key={'product-price-list-' + index} className={'product-price-list-item'}>
+                    <span className='price-text' key={'product-price-list-name-' + index}>{'Name:' + product.name}</span>
+                    <span className='price-text' key={'product-price-list-quantity-' + index}>{'Quantity: ' + quantity}</span>
+                    <span className='price-text' key={'product-price-list-cost-' + index}>{'Cost: ' + currencyFormatter.format(cost)}</span>
                 </div>
             )
         })}
-        <div>
-            <span>{'Subtotal: ' + currencyFormatter.format(subtotal)}</span>
-            <span>{'Taxes: ' + currencyFormatter.format(taxes)}</span>
-            <span>{'Total: ' + currencyFormatter.format(subtotal + taxes)}</span>
+        <div className='shopping-cart-product-list-prices'>
+            <span className='price-text'>{'Subtotal: ' + currencyFormatter.format(subtotal)}</span>
+            <span className='price-text'>{'Taxes: ' + currencyFormatter.format(taxes)}</span>
+            <span className='price-text'>{'Total: ' + currencyFormatter.format(subtotal + taxes)}</span>
         </div>
     </div>)
 }

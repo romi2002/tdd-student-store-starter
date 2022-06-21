@@ -10,12 +10,11 @@ export default function Sidebar(props) {
             <div className={'sidebar'}>
                 {props.isOpen &&
                     <>
-                        <h6>open</h6>
                         <ShoppingCart shoppingCart={props.shoppingCart}
                                       products={props.products}/>
                     </>
                 }
-                <button className={'toggle-button'} onClick={props.handleOnToggle}>Open</button>
+                <button className={'toggle-button'} onClick={props.handleOnToggle}>Open shopping cart</button>
             </div>
         </section>
     )

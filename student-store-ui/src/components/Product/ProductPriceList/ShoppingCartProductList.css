@@ -1,0 +1,14 @@
+.shopping-cart-product-list-prices{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-price-list-item{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+}
+
+.price-text{
+    padding: 0.25em;
+}
