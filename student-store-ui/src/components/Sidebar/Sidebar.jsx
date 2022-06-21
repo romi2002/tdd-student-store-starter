@@ -3,6 +3,7 @@ import "./Sidebar.css"
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import {useState} from "react";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import IconButton from "../CategoryButton/IconButton";
 
 export default function Sidebar(props) {
     return (
@@ -14,7 +15,9 @@ export default function Sidebar(props) {
                                       products={props.products}/>
                     </>
                 }
-                <button className={'toggle-button'} onClick={props.handleOnToggle}>Open shopping cart</button>
+                <IconButton
+                    onSelectedHandler={props.handleOnToggle}
+                    text={props.isOpen ? "Close shopping cart" : "Open shopping cart"}/>
             </div>
         </section>
     )

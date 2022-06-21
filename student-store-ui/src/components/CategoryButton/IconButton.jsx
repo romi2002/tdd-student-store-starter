@@ -8,12 +8,12 @@ export default function IconButton({
                                            onSelectedHandler,
                                            icon,
                                            text,
-                                           isActive
+                                           isActive = true
                                        }) {
     return (
         <div className={isActive ? 'icon-button' : 'button-inactive icon-button'}
             onClick={onSelectedHandler}>
             <span className='icon-button'>{text}</span>
-            {icon}
+            {icon && icon}
         </div>)
 }
