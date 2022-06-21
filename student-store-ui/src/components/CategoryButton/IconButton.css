@@ -1,11 +1,12 @@
 div.icon-button {
     margin: 0.25em;
-    display: flex;
+    display: inline-flex;
     flex-wrap: nowrap;
     align-items: center;
     background-color: lightblue;
     padding: 10px 20px;
     border-radius: 16px;
+
 }
 
 span.icon-button {

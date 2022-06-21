@@ -1,6 +1,8 @@
 import * as React from "react"
 import "./ProductCard.css"
 import {Link} from 'react-router-dom'
+import IconButton from "../../CategoryButton/IconButton";
+import {BsFillBagPlusFill, BsFillBagXFill, FaShoppingBasket} from "react-icons/all";
 
 export default function ProductCard({
                                         product,
@@ -19,8 +21,6 @@ export default function ProductCard({
 
     return (
         <div className={'product-card'}>
-            <span className={'product-name'}>{product.name}</span>
-            <span className={'product-price'}>{priceString}</span>
             {showDescription && <span className={'product-description'}>{product.description}</span>}
             <div className={'media'}>
                 <Link to={"/products/" + productId}>
@@ -28,18 +28,23 @@ export default function ProductCard({
                 </Link>
             </div>
             <div>
-                <button className={'add'} onClick={() => {
-                    handleAddItemToCart(productId)
-                }}>Add
-                </button>
-                <button
-                    disabled={quantity === 0}
-                    className={'remove'} onClick={() => {
-                    handleRemoveItemToCart(productId)
-                }}>Remove
-                </button>
+                <span className={'product-name'}>{product.name}</span>
+                <div className={'product-card-buttons'}>
+                    <IconButton
+                        onSelectedHandler={() => {handleAddItemToCart(productId)}}
+                        icon={<BsFillBagPlusFill size={30}/>}
+                    />
+                    <IconButton
+                        onSelectedHandler={() => handleRemoveItemToCart(productId)}
+                        icon={<BsFillBagXFill size={30}/>}
+                        isActive={quantity !== 0}
+                    />
+                </div>
+                <div className='product-card-prod-info'>
+                    <span className={'product-price'}>{priceString}</span>
+                    <span className={'product-quantity'}>{'Quantity: ' + quantity}</span>
+                </div>
             </div>
-            <span className={'product-quantity'}>{quantity}</span>
         </div>
     )
 }

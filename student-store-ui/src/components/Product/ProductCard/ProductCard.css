@@ -1,12 +1,33 @@
 .product-card {
-    background-color: gray;
     display: flex;
     flex-direction: column;
     max-width: 300px;
     margin: 0.5em;
+    justify-content: start;
+}
+
+.product-card  {
+    border-radius: 16px;
+}
+
+.product-card-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.product-card-prod-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    margin: 0.25em;
+    padding: 10px 20px;
+    border-radius: 16px;
 }
 
 .media {
     width: 100%;
+    border-radius: 16px;
     height: auto;
 }

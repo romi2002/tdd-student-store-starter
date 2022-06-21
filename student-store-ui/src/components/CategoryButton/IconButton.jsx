@@ -5,15 +5,15 @@ import "./IconButton.css"
 Creates a button with an icon used to filter out categories
  */
 export default function IconButton({
-                                           onSelectedHandler,
+                                           onSelectedHandler: onClick,
                                            icon,
                                            text,
-                                           isActive = true
+                                           isActive = true,
                                        }) {
     return (
         <div className={isActive ? 'icon-button' : 'button-inactive icon-button'}
-            onClick={onSelectedHandler}>
-            <span className='icon-button'>{text}</span>
+            onClick={onClick}>
+            {text && <span className='icon-button'>{text}</span>}
             {icon && icon}
         </div>)
 }

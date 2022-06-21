@@ -1,3 +1,4 @@
+/*TODO Add masonry layout to product grid?*/
 .product-grid{
     display: flex;
     flex-wrap: wrap;
