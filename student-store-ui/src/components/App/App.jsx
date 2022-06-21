@@ -9,6 +9,7 @@ import ProductDetail from "../Product/ProductDetail/ProductDetail";
 import {useState, useEffect} from "react";
 import axios from "axios";
 import NotFound from "../NotFound/NotFound";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
 export default function App() {
     const [products, setProduct] = useState([])
