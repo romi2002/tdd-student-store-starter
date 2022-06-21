@@ -11,13 +11,12 @@ export default function ProductPriceList({
     })
 
     const subtotal = shoppingCart.length ? shoppingCart.slice(1).reduce((total, quantity, id) => {
+        console.log(`${total} + ${quantity} * ${products[id].price}`)
         if (quantity && quantity !== 0) return total + quantity * products[id].price
         else return total
     }) : 0;
 
     const taxes = subtotal * 0.0875;
-
-    const hasItems = shoppingCart.some((val) => val !== 0); //Maybe not a good idea in case there's a free item
 
     return (<div>
         {shoppingCart && shoppingCart.slice(1).map((quantity, index) => {
@@ -27,10 +26,10 @@ export default function ProductPriceList({
             console.log(product)
             //TODO Format items
             return (quantity &&
-                <div>
-                    <h6>{'Name:' + product.name}</h6>
-                    <h6>{'Quantity: ' + quantity}</h6>
-                    <h6>{'Cost: ' + currencyFormatter.format(cost)}</h6>
+                <div key={'product-price-list-' + index}>
+                    <h6 key={'product-price-list-name-' + index}>{'Name:' + product.name}</h6>
+                    <h6 key={'product-price-list-quantity-' + index}>{'Quantity: ' + quantity}</h6>
+                    <h6 key={'product-price-list-cost-' + index}>{'Cost: ' + currencyFormatter.format(cost)}</h6>
                 </div>
             )
         })}

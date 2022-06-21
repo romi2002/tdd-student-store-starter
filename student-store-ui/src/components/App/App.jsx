@@ -21,6 +21,7 @@ export default function App() {
         axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
             setProduct(res.data.products)
             console.log(res.data.products)
+            setShoppingCart(Array(res.data.products.length).fill(0))
         })
     }, [])
 

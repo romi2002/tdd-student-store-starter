@@ -32,7 +32,9 @@ export default function ProductCard({
                     handleAddItemToCart(productId)
                 }}>Add
                 </button>
-                <button className={'remove'} onClick={() => {
+                <button
+                    disabled={quantity === 0}
+                    className={'remove'} onClick={() => {
                     handleRemoveItemToCart(productId)
                 }}>Remove
                 </button>
