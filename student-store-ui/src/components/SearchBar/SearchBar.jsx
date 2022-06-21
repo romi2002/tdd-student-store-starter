@@ -10,9 +10,10 @@ export default function SearchBar({
         <div className='search-bar'>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Search
-                    <FaSearch/>
-                    <input type="text" name="search-bar" onChange={handleSearchChange}/>
+                    <div className={'search-bar'}>
+                        <span className={'search-bar'}><FaSearch/></span>
+                        <input type="text" name="search-bar" onChange={handleSearchChange}/>
+                    </div>
                 </label>
             </form>
         </div>

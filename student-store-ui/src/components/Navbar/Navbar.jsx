@@ -2,7 +2,7 @@ import * as React from "react"
 import Logo from "../Logo/Logo";
 import "./Navbar.css"
 import IconButton from "../CategoryButton/IconButton";
-import {FaLaptop, FaPaperclip, FaTshirt, FaHamburger} from "react-icons/all";
+import {FaLaptop, FaPaperclip, FaTshirt, FaHamburger, FaShoppingBasket} from "react-icons/all";
 import SearchBar from "../SearchBar/SearchBar";
 
 export default function Navbar({
@@ -12,8 +12,10 @@ export default function Navbar({
                                }) {
     return (
         <nav className="navbar">
-            <p>Navbar</p>
-            <Logo imgSrc={"https://via.placeholder.com/300.png"}/>
+            <div className='main-bar'>
+                <p>Navbar</p>
+                <FaShoppingBasket/>
+            </div>
             <div className='filters'>
                 <IconButton
                     onSelectedHandler={() => categorySelectedHandler('clothing')}
