@@ -1,13 +1,13 @@
 import * as React from "react"
 import {Link} from 'react-router-dom'
-import {ShoppingCart} from '@material-ui/icons'
+import {FaShoppingCart} from "react-icons/all";
 import "./Logo.css"
 
 export default function Logo({imgSrc}) {
     return (
         <div className={"logo"}>
             <Link to="/">
-                <ShoppingCart/>
+                <FaShoppingCart/>
             </Link>
         </div>
     )

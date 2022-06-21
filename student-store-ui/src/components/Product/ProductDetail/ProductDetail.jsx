@@ -1,4 +1,4 @@
-import * as React from "React"
+import * as React from "react"
 import "./ProductDetail.css"
 import {useEffect, useState} from "react";
 import { Routes, Route, useParams } from 'react-router-dom';

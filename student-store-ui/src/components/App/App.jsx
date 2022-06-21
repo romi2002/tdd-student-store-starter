@@ -15,7 +15,7 @@ export default function App() {
     const [products, setProduct] = useState([])
     const [isOpen, setOpen] = useState(false)
     const [shoppingCart, setShoppingCart] = useState([])
-    const [selectedCategory, setSelectedCategory] = useState(null)
+    const [selectedCategories, setSelectedCategory] = useState(['clothing','accessories','tech','food'])
 
     useEffect(() => {
         axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
@@ -47,6 +47,20 @@ export default function App() {
         setShoppingCart(newShoppingCart)
     }
 
+    const categorySelectedHandler = (category) => {
+        console.log(category)
+        var newCategories = [...selectedCategories]
+        const index = newCategories.indexOf(category)
+        if(index !== -1){
+            //Remove category
+            newCategories.splice(index, 1);
+        } else {
+            newCategories.push(category)
+        }
+        console.log(newCategories)
+        setSelectedCategory(newCategories)
+    }
+
     return (
         <div className="app">
             <BrowserRouter>
@@ -61,11 +75,13 @@ export default function App() {
                                 }} shoppingCart={shoppingCart}
                                 products={products}/>
                                 <div className='content'>
-                                    <Navbar selectedCategory={selectedCategory}/>
+                                    <Navbar selectedCategories={selectedCategories}
+                                            categorySelectedHandler ={categorySelectedHandler}/>
                                     <Home handleAddItemToCart={addItemToCart}
                                           handleRemoveItemToCart={removeItemFromCart}
                                           shoppingCart={shoppingCart}
                                           products={products}
+                                          selectedCategories={selectedCategories}
                                     />
                                 </div>
                             </main>

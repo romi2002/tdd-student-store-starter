@@ -3,10 +3,12 @@ import "./CategoryButton.css"
 
 export default function CategoryButton({onSelectedHandler,
                                        icon,
-                                       text}){
+                                       text,
+                                       isActive}){
     return (
-        <div>
-            <button onClick={onSelectedHandler}>{text}</button>
+        <div className={isActive ? 'category-button' : 'category-button button-inactive'}>
+            <button
+                    onClick={onSelectedHandler}>{text}</button>
             {icon}
         </div>)
 }

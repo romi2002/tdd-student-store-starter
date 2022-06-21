@@ -1,6 +1,6 @@
 import * as React from "react"
 import "./ShoppingCart.css"
-import {ShoppingCart as ShoppingCartIcon} from "@material-ui/icons";
+import {FaShoppingCart} from "react-icons/all";
 import ProductPriceList from "../Product/ProductPriceList/ProductPriceList";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import {useState} from "react";
@@ -9,11 +9,10 @@ import {useState} from "react";
 export default function ShoppingCart({products, shoppingCart}){
     const [openCheckoutModal, setCheckoutModal] = useState(false)
 
-    console.log(shoppingCart)
     const hasItems = shoppingCart.some((val) => val !== 0);
     return (
         <div className='shopping-cart'>
-            <ShoppingCartIcon/>
+            <FaShoppingCart/>
             {!hasItems ? (
                 <span className='notification'>No items added to cart yet. Start shopping now!</span>
                 ) :

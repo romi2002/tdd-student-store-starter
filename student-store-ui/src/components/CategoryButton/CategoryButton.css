@@ -1,0 +1,8 @@
+.category-button {
+    background-color: pink;
+    margin: 0.25em;
+}
+
+.button-inactive {
+    background-color: red;
+}
