@@ -4,10 +4,11 @@
     max-width: 300px;
     margin: 0.5em;
     justify-content: start;
-}
-
-.product-card  {
+    background-color: white;
+    border: 1px solid #11111111;
+    box-shadow: 0 2px 5px #00000011;
     border-radius: 16px;
+    height: fit-content;
 }
 
 .product-card-buttons {
@@ -20,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+    background-color: #97e6ff;
     margin: 0.25em;
     padding: 10px 20px;
     border-radius: 16px;
@@ -30,4 +31,5 @@
     width: 100%;
     border-radius: 16px;
     height: auto;
+    padding: 0.25em;
 }

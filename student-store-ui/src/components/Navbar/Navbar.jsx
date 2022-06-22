@@ -13,10 +13,12 @@ export default function Navbar({
     return (
         <nav className="navbar">
             <div className='main-bar'>
-                <p>Navbar</p>
                 <FaShoppingBasket/>
+                <h1>Navbar</h1>
             </div>
             <div className='filters'>
+                <SearchBar handleSubmit={handleSearchSubmit}
+                           handleSearchChange={handleSearchChange}/>
                 <IconButton
                     onSelectedHandler={() => categorySelectedHandler('clothing')}
                     icon={<FaTshirt/>}
@@ -37,8 +39,6 @@ export default function Navbar({
                     icon={<FaHamburger/>}
                     text={"Food"}
                     isActive={selectedCategories.includes('food')}/>
-                <SearchBar handleSubmit={handleSearchSubmit}
-                           handleSearchChange={handleSearchChange}/>
             </div>
         </nav>
     )

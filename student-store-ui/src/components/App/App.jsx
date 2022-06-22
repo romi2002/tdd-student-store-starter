@@ -21,7 +21,7 @@ export default function App() {
     useEffect(() => {
         axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
             setProduct(res.data.products)
-            setShoppingCart(Array(res.data.products.length).fill(0))
+            setShoppingCart(Array(res.data.products.length + 1).fill(0))
         })
     }, [])
 

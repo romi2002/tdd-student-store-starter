@@ -1,6 +1,7 @@
 .navbar {
-    background-color: gray;
+    background-color: #60b4f4;
     width: 90vw;
+    height: 20vh;
     display: flex;
     top: 0;
     position: sticky;
@@ -18,4 +19,5 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
