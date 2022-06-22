@@ -2,9 +2,9 @@ import * as React from "react"
 import "./ShoppingCartProductList.css"
 
 export default function ShoppingCartProductList({
-                                             products,
-                                             shoppingCart
-                                         }) {
+                                                    products,
+                                                    shoppingCart
+                                                }) {
     const currencyFormatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -22,12 +22,18 @@ export default function ShoppingCartProductList({
             const product = products[index]
             const cost = quantity * product.price;
             //TODO Format items
-            if(quantity !== 0) return (
-                <div key={'product-price-list-' + index} className={'product-price-list-item'}>
-                    <span className='price-text' key={'product-price-list-name-' + index}>{'Name:' + product.name}</span>
-                    <span className='price-text' key={'product-price-list-quantity-' + index}>{'Quantity: ' + quantity}</span>
-                    <span className='price-text' key={'product-price-list-cost-' + index}>{'Cost: ' + currencyFormatter.format(cost)}</span>
-                </div>
+            if (quantity !== 0) return (
+                <>
+                    {index === 0 && <hr className={'product-separator'}/>}
+                    <div key={'product-price-list-' + index} className={'product-price-list-item'}>
+                        <span className='price-text' key={'product-price-list-name-' + index}>{product.name}</span>
+                        <span className='price-text'
+                              key={'product-price-list-quantity-' + index}>{'Quantity: ' + quantity}</span>
+                        <span className='price-text'
+                              key={'product-price-list-cost-' + index}>{'Cost: ' + currencyFormatter.format(cost)}</span>
+                    </div>
+                    <hr className={'product-separator'}/>
+                </>
             )
         })}
         <div className='shopping-cart-product-list-prices'>

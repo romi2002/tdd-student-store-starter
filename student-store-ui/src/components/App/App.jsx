@@ -79,25 +79,29 @@ export default function App() {
                     <Route path="/" element={
                         <>
                             <main>
-                                <Sidebar isOpen={isOpen} handleOnToggle={() => {
-                                    setOpen(!isOpen)
-                                }} shoppingCart={shoppingCart}
-                                         products={products}/>
-                                <div className='content'>
-                                    <Navbar/>
-                                    <Home handleAddItemToCart={addItemToCart}
-                                          handleRemoveItemToCart={removeItemFromCart}
-                                          shoppingCart={shoppingCart}
-                                          products={products}
-                                          selectedCategories={selectedCategories}
-                                          searchTerm={searchBar}
-                                          selectedSort={selectedSort}
-                                          categorySelectedHandler={categorySelectedHandler}
-                                          handleSearchSubmit={handleSearchSubmit}
-                                          handleSearchChange={handleSearchChange}
-                                          handleSortFuncChange={handleSortChange}
-                                    />
+                                <Navbar/>
+                                <div className='main-window'>
+                                    <Sidebar isOpen={isOpen} handleOnToggle={() => {
+                                        setOpen(!isOpen)
+                                    }} shoppingCart={shoppingCart}
+                                             products={products}/>
+                                    <div className='content'>
+                                        <Home handleAddItemToCart={addItemToCart}
+                                              handleRemoveItemToCart={removeItemFromCart}
+                                              shoppingCart={shoppingCart}
+                                              products={products}
+                                              selectedCategories={selectedCategories}
+                                              searchTerm={searchBar}
+                                              selectedSort={selectedSort}
+                                              categorySelectedHandler={categorySelectedHandler}
+                                              handleSearchSubmit={handleSearchSubmit}
+                                              handleSearchChange={handleSearchChange}
+                                              handleSortFuncChange={handleSortChange}
+                                        />
+                                    </div>
                                 </div>
+
+
                             </main>
                         </>
                     }/>
