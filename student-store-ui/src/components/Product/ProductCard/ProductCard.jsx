@@ -32,11 +32,11 @@ export default function ProductCard({
                 <div className={'product-card-buttons'}>
                     <IconButton
                         onSelectedHandler={() => {handleAddItemToCart(productId)}}
-                        icon={<BsFillBagPlusFill size={30}/>}
+                        icon={<BsFillBagPlusFill size={24}/>}
                     />
                     <IconButton
                         onSelectedHandler={() => handleRemoveItemToCart(productId)}
-                        icon={<BsFillBagXFill size={30}/>}
+                        icon={<BsFillBagXFill size={24}/>}
                         isActive={quantity !== 0}
                     />
                 </div>

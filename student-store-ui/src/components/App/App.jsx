@@ -84,11 +84,7 @@ export default function App() {
                                 }} shoppingCart={shoppingCart}
                                          products={products}/>
                                 <div className='content'>
-                                    <Navbar selectedCategories={selectedCategories}
-                                            categorySelectedHandler={categorySelectedHandler}
-                                            handleSearchSubmit={handleSearchSubmit}
-                                            handleSearchChange={handleSearchChange}
-                                            handleSortFuncChange={handleSortChange}/>
+                                    <Navbar/>
                                     <Home handleAddItemToCart={addItemToCart}
                                           handleRemoveItemToCart={removeItemFromCart}
                                           shoppingCart={shoppingCart}
@@ -96,6 +92,10 @@ export default function App() {
                                           selectedCategories={selectedCategories}
                                           searchTerm={searchBar}
                                           selectedSort={selectedSort}
+                                          categorySelectedHandler={categorySelectedHandler}
+                                          handleSearchSubmit={handleSearchSubmit}
+                                          handleSearchChange={handleSearchChange}
+                                          handleSortFuncChange={handleSortChange}
                                     />
                                 </div>
                             </main>

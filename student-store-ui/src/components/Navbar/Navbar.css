@@ -10,10 +10,13 @@
     align-items: flex-start;
 }
 
+.store-name{
+    padding-left: 1em;
+}
+
 .main-bar {
     display: flex;
     align-items: center;
-    background-color: pink;
 }
 
 .navbar .filters {
