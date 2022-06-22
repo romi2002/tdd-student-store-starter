@@ -8,7 +8,8 @@ import SearchBar from "../SearchBar/SearchBar";
 export default function Navbar({
                                    selectedCategories,
                                    categorySelectedHandler,
-                                   handleSearchSubmit, handleSearchChange
+                                   handleSearchSubmit, handleSearchChange,
+                                   handleSortFuncChange
                                }) {
     return (
         <nav className="navbar">
@@ -39,6 +40,16 @@ export default function Navbar({
                     icon={<FaHamburger/>}
                     text={"Food"}
                     isActive={selectedCategories.includes('food')}/>
+                <label>
+                    Sort:
+                    <select onChange={handleSortFuncChange}>
+                        <option value='id-asc'>Default</option>
+                        <option value="price-asc">Price Ascending</option>
+                        <option value="price-desc">Price Descending</option>
+                        <option value='name-asc'>Name Ascending</option>
+                        <option value='name-desc'>Name Deescending</option>
+                    </select>
+                </label>
             </div>
         </nav>
     )
