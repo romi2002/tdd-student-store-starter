@@ -11,6 +11,12 @@
     height: fit-content;
 }
 
+.product-card .content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
 .product-card-buttons {
     display: flex;
     justify-content: center;
@@ -25,6 +31,10 @@
     margin: 0.25em;
     padding: 10px 20px;
     border-radius: 16px;
+}
+
+.product-name {
+    text-align: center;
 }
 
 .media {

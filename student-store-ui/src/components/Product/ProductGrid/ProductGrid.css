@@ -4,4 +4,6 @@
     flex-wrap: wrap;
     margin-bottom: 1em;
     justify-content: center;
+    flex-grow: 1;
+    flex-basis: 0;
 }

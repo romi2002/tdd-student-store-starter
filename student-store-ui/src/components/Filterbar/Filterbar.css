@@ -1,5 +1,13 @@
 .filterbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.filterbox {
+    background-color: #97e6ff;
+    padding: 10px 20px;
+    border-radius: 16px;
+    transition: 0.2s all ease;
 }

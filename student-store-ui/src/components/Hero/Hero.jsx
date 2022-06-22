@@ -4,8 +4,10 @@ import "./Hero.css"
 export default function Hero(props) {
     return (
         <div className='hero'>
-            <span className='intro'>Welcome!</span>
-            <h1>Hero</h1>
+            <div className='hero-container'>
+                <span className='intro'>Welcome to the student store!</span>
+                <span className='description'>Shop for all your favorite products here!</span>
+            </div>
         </div>
     )
 }

@@ -27,7 +27,7 @@ export default function ProductCard({
                     <img className={'media'} src={product.image}/>
                 </Link>
             </div>
-            <div>
+            <div className='content'>
                 <span className={'product-name'}>{product.name}</span>
                 <div className={'product-card-buttons'}>
                     <IconButton

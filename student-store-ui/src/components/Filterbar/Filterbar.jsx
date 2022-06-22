@@ -11,23 +11,6 @@ export default function Filterbar({
     return (
         <div className='filterbar'>
             <div>
-                <SearchBar handleSubmit={handleSearchSubmit}
-                           handleSearchChange={handleSearchChange}/>
-
-                <label>
-                    Sort:
-                    <select onChange={handleSortFuncChange}>
-                        <option value='id-asc'>Default</option>
-                        <option value="price-asc">Price Ascending</option>
-                        <option value="price-desc">Price Descending</option>
-                        <option value='name-asc'>Name Ascending</option>
-                        <option value='name-desc'>Name Descending</option>
-                    </select>
-                </label>
-            </div>
-
-
-            <div>
                 <span>Categories:</span>
                 <IconButton
                     onSelectedHandler={() => categorySelectedHandler('clothing')}
@@ -49,6 +32,22 @@ export default function Filterbar({
                     icon={<FaHamburger/>}
                     text={"Food"}
                     isActive={selectedCategories.includes('food')}/>
+            </div>
+
+            <div className='filterbox'>
+                <SearchBar handleSubmit={handleSearchSubmit}
+                           handleSearchChange={handleSearchChange}/>
+
+                <label>
+                    Sort:
+                    <select onChange={handleSortFuncChange}>
+                        <option value='id-asc'>Default</option>
+                        <option value="price-asc">Price Ascending</option>
+                        <option value="price-desc">Price Descending</option>
+                        <option value='name-asc'>Name Ascending</option>
+                        <option value='name-desc'>Name Descending</option>
+                    </select>
+                </label>
             </div>
         </div>
     )
