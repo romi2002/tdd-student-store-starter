@@ -4,6 +4,7 @@ import "./Navbar.css"
 import IconButton from "../CategoryButton/IconButton";
 import {FaLaptop, FaPaperclip, FaTshirt, FaHamburger, FaShoppingBasket} from "react-icons/all";
 import SearchBar from "../SearchBar/SearchBar";
+import SocialsBar from "../SocialsBar/SocialsBar";
 
 export default function Navbar({
                                    selectedCategories,
@@ -17,6 +18,7 @@ export default function Navbar({
                 <FaShoppingBasket size={24}/>
                 <h1 className='store-name'>Student Store</h1>
             </div>
+            <SocialsBar/>
         </nav>
     )
 }
