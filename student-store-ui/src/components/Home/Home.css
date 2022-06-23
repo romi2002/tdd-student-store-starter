@@ -6,4 +6,9 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    min-height: 100%;
+}
+
+.home-content {
+    flex: 1 1 auto;
 }

@@ -20,10 +20,12 @@
 .main-window {
     display: flex;
     overflow-y: scroll;
+    height: 100%;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    width: 100%;
 }

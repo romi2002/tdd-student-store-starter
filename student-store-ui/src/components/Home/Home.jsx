@@ -9,10 +9,13 @@ import Filterbar from "../Filterbar/Filterbar";
 export default function Home(props) {
     return (
         <div className="home">
-            <Hero/>
-            <Filterbar {...props}/>
-            <ProductGrid {...props}/>
+            <div className='home-content'>
+                <Hero/>
+                <Filterbar {...props}/>
+                <ProductGrid {...props}/>
+            </div>
             <Footer/>
         </div>
+
     )
 }
