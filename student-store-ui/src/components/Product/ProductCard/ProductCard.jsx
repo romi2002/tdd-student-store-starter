@@ -10,7 +10,9 @@ export default function ProductCard({
                                         quantity,
                                         handleAddItemToCart,
                                         handleRemoveItemToCart,
-                                        showDescription
+                                        showDescription,
+                                        showButtons = true,
+                                        showName = true
                                     }) {
     const currencyFormatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -21,15 +23,14 @@ export default function ProductCard({
 
     return (
         <div className={'product-card'}>
-            {showDescription && <span className={'product-description'}>{product.description}</span>}
             <div className={'media'}>
                 <Link to={"/products/" + productId}>
                     <img className={'media'} src={product.image}/>
                 </Link>
             </div>
             <div className='content'>
-                <span className={'product-name'}>{product.name}</span>
-                <div className={'product-card-buttons'}>
+                {showName && <span className={'product-name'}>{product.name}</span>}
+                {showButtons && <div className={'product-card-buttons'}>
                     <IconButton
                         onSelectedHandler={() => {handleAddItemToCart(productId)}}
                         icon={<BsFillBagPlusFill size={24}/>}
@@ -39,11 +40,14 @@ export default function ProductCard({
                         icon={<BsFillBagXFill size={24}/>}
                         isActive={quantity !== 0}
                     />
-                </div>
+                </div>}
                 <div className='product-card-prod-info'>
                     <span className={'product-price'}>{priceString}</span>
-                    <span className={'product-quantity'}>{'Quantity: ' + quantity}</span>
+                    {quantity !== undefined && <span className={'product-quantity'}>{'Quantity: ' + quantity}</span>}
                 </div>
+                {showDescription && <div className={'product-card-prod-info'}>
+                    <span className={'product-description'}>{product.description}</span>
+                </div>}
             </div>
         </div>
     )

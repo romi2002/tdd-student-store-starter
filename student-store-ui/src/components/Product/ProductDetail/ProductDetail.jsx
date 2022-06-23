@@ -23,7 +23,10 @@ export default function ProductDetail({}) {
         <div className={'product-detail'}>
             {product === null ?
                 <h1 className='loading'>Loading...</h1> :
-                <ProductView productId={productId} product={product}/>}
+                <ProductView productId={productId} product={product}
+                showButtons={false}
+                showDescription={true}
+                showName={false}/>}
         </div>
     )
 }
