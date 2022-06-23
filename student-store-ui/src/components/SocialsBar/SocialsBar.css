@@ -1,0 +1,20 @@
+.socials-bar {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 2em 2em 2em 2em;
+}
+
+.socials-bar .icon {
+    margin-right: 0.5em;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.socials-link {
+}
