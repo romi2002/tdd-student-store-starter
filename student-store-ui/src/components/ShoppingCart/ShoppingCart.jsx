@@ -7,7 +7,13 @@ import {useState} from "react";
 import IconButton from "../CategoryButton/IconButton";
 
 //TODO Check classnames for autograder
-export default function ShoppingCart({products, shoppingCart, className}) {
+export default function ShoppingCart({
+                                         products,
+                                         shoppingCart,
+                                         checkoutFormData,
+                                         handleOnCheckoutFormChange,
+                                         handleOnSubmitCheckoutForm
+                                     }) {
     const [openCheckoutModal, setCheckoutModal] = useState(false)
 
     const hasItems = shoppingCart.some((val) => val !== 0);
@@ -19,11 +25,14 @@ export default function ShoppingCart({products, shoppingCart, className}) {
                 <>
                     <ShoppingCartProductList products={products} shoppingCart={shoppingCart}/>
                     <IconButton text='Checkout!'
-                    onSelectedHandler={() => setCheckoutModal(!openCheckoutModal)}/>
+                                onSelectedHandler={() => setCheckoutModal(!openCheckoutModal)}/>
                     <CheckoutForm isOpen={openCheckoutModal}
                                   handleOnCloseCheckout={() => setCheckoutModal(false)}
                                   products={products}
-                                  shoppingCart={shoppingCart}/>
+                                  shoppingCart={shoppingCart}
+                                  handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+                                  handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                                  checkoutFormData={checkoutFormData}/>
                 </>}
         </div>
     )

@@ -16,13 +16,16 @@ class Store {
         throw new Error("Invalid product id given!")
     }
 
-    computeOrderTotal(shoppingCart){
+    computeOrderSubtotal(shoppingCart){
         const products = this.getProducts().products
         if(!shoppingCart || shoppingCart.length === 0) return 0
-        return shoppingCart.reduce((prevSum, currentValue, index) =>{
-            if(!currentValue) return prevSum
-            return prevSum + currentValue * products[index].price
-        }) * 1.0875;
+
+        let subtotal = 0;
+        shoppingCart.slice(1).map((quantity, index) => {
+            subtotal += (products[index].price ?? 0) * quantity
+        })
+
+        return subtotal
     }
 
     getNewOrderId() {
@@ -34,13 +37,17 @@ class Store {
             throw new Error("Order cannot be processed with empty shopping cart or user")
         }
 
-        const total = this.computeOrderTotal(shoppingCart)
+        const subtotal = this.computeOrderSubtotal(shoppingCart)
+        const tax = subtotal * 0.0875
+        const total = subtotal + tax
 
         const orderData = {
             'id' : this.getNewOrderId(),
             'name' : user.name,
             'email' : user.email,
             'order' : shoppingCart,
+            'subtotal' : subtotal,
+            'tax' : tax,
             'total' : total,
             'createdAt' :  new Date().toISOString()
         }

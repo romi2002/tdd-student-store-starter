@@ -10,12 +10,19 @@ export default function ShoppingCartProductList({
         currency: 'USD',
     })
 
-    const subtotal = shoppingCart.length ? shoppingCart.slice(1).reduce((total, quantity, id) => {
-        if (quantity && quantity !== 0) return total + quantity * products[id].price
-        else return total
-    }) : 0;
+    // const subtotal = shoppingCart.length ? shoppingCart.slice(1).reduce((total, quantity, id) => {
+    //     if (quantity && quantity !== 0) return total +  products[id].price
+    //     else return total
+    // }) : 0;
+
+    let subtotal = 0;
+    shoppingCart.slice(1).forEach((quantity, index) => {
+        subtotal += products[index].price * quantity
+    })
 
     const taxes = subtotal * 0.0875;
+    console.log('Subtotal:', subtotal)
+    console.log('Price:', products[0].price)
 
     return (<div>
         {shoppingCart && shoppingCart.slice(1).map((quantity, index) => {
@@ -24,7 +31,7 @@ export default function ShoppingCartProductList({
             //TODO Format items
             if (quantity !== 0) return (
                 <>
-                    {index === 0 && <hr className={'product-separator'}/>}
+                    {index === 0 && <hr key={'product-price-list-upp-sep-' + index} className={'product-separator'}/>}
                     <div key={'product-price-list-' + index} className={'product-price-list-item'}>
                         <span className='price-text' key={'product-price-list-name-' + index}>{product.name}</span>
                         <span className='price-text'
@@ -32,7 +39,7 @@ export default function ShoppingCartProductList({
                         <span className='price-text'
                               key={'product-price-list-cost-' + index}>{'Cost: ' + currencyFormatter.format(cost)}</span>
                     </div>
-                    <hr className={'product-separator'}/>
+                    <hr key={'product-price-list-lower-sep-' + index} className={'product-separator'}/>
                 </>
             )
         })}

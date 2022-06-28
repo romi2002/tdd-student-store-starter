@@ -18,7 +18,10 @@ export default function Sidebar(props) {
                 {props.isOpen &&
                     <>
                         <ShoppingCart className='shopping-cart-side' shoppingCart={props.shoppingCart}
-                                      products={props.products}/>
+                                      products={props.products}
+                                      handleOnCheckoutFormChange={props.handleOnCheckoutFormChange}
+                                      handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
+                                      checkoutFormData={props.checkoutFormData}/>
                     </>
                 }
             </div>

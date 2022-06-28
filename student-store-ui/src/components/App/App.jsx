@@ -19,6 +19,7 @@ export default function App() {
     const [selectedCategories, setSelectedCategory] = useState(['clothing', 'accessories', 'tech', 'food'])
     const [searchBar, setSearchBar] = useState('')
     const [selectedSort, setSortFunc] = useState('id-asc')
+    const [checkoutUserData, setCheckoutUserData] = useState({})
 
     useEffect(() => {
         axios.get('http://localhost:3001/store').then(res => {
@@ -72,6 +73,29 @@ export default function App() {
         setSortFunc(event.target.value)
     }
 
+    const handleOnCheckoutFormChange = (event) => {
+        let newUserData = {...checkoutUserData}
+        switch(event.target.name){
+            case 'email':
+                newUserData.email = event.target.value
+                break
+            case 'name':
+                newUserData.name = event.target.value
+                break
+        }
+        console.log(newUserData)
+        setCheckoutUserData(newUserData)
+    }
+
+    const handleCheckoutSubmit = () => {
+        let data = {...checkoutUserData}
+        data.shoppingCart = shoppingCart
+        axios.post('http://localhost:3001/store', data).then((resp) => {
+                console.log(resp.data)
+            }
+        )
+    }
+
     return (
         <div className="app">
             <BrowserRouter>
@@ -85,6 +109,9 @@ export default function App() {
                                     <Sidebar isOpen={isOpen} handleOnToggle={() => {
                                         setOpen(!isOpen)
                                     }} shoppingCart={shoppingCart}
+                                             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                                             handleOnSubmitCheckoutForm={handleCheckoutSubmit}
+                                             checkoutFormData={checkoutUserData}
                                              products={products}/>
                                     <div className='content'>
                                         <Home handleAddItemToCart={addItemToCart}

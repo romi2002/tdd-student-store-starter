@@ -10,16 +10,20 @@ export default function CheckoutForm({
                                          isOpen = true,
                                          shoppingCart,
                                          products,
-                                         checkoutForm = {
-                                             'email': 'email@fb.com',
-                                             'name': 'abiel'
-                                         },
-                                         handleOnCheckoutFormChange = () => console.log("change"),
-                                         handleOnSubmitCheckoutForm = () => console.log("Submit"),
+                                         checkoutFormData,
+                                         handleOnCheckoutFormChange,
+                                         handleOnSubmitCheckoutForm,
                                          handleOnCloseCheckout,
                                      }) {
 
     const [termsAndConditionsAccepted, setTermsAndCond] = useState(false)
+
+    const isFormFilledOut = checkoutFormData &&
+        (checkoutFormData.name ?? '') !== '' &&
+        (checkoutFormData.email ?? '') !== ''
+
+    console.log(termsAndConditionsAccepted)
+    console.log(isFormFilledOut)
 
     return <div className='checkout-form'>
         <Modal
@@ -33,7 +37,6 @@ export default function CheckoutForm({
                     <input type='email'
                            name='email'
                            placeholder='student@codepath.org'
-                           value={checkoutForm.email}
                            onChange={handleOnCheckoutFormChange}/>
                 </label>
 
@@ -44,7 +47,6 @@ export default function CheckoutForm({
                     <input type='text'
                            name='name'
                            placeholder='Student Name'
-                           value={checkoutForm.name}
                            onChange={handleOnCheckoutFormChange}/>
                 </label>
                 <ShoppingCartProductList
@@ -56,8 +58,7 @@ export default function CheckoutForm({
                            onChange={(e) => setTermsAndCond(e.target.checked)}></input>
                 </label>
                 <button className='checkout-button'
-                        disabled={!termsAndConditionsAccepted}
-                    //TODO Send the request somewhere
+                        disabled={(!termsAndConditionsAccepted || !isFormFilledOut)}
                         onClick={handleOnSubmitCheckoutForm}>Checkout
                 </button>
                 <button onClick={handleOnCloseCheckout}>
