@@ -46,8 +46,10 @@ export default function ProductGrid({
             break
     }
 
-    var sortedProducts = [...products]
+    var sortedProducts = [...(products??[])]
     sortedProducts.sort(sortFunc)
+
+    console.log(sortedProducts)
 
     return (<div className={"product-grid"}>
         {sortedProducts.map((product, id) => {

@@ -10,9 +10,10 @@ export default function ProductDetail({}) {
     const [product, setProduct] = useState(null)
 
     useEffect(() => {
-        axios.get('https://codepath-store-api.herokuapp.com/store/' + productId).then(res => {
+        axios.get('http://localhost:3001/store/' + productId).then(res => {
+            console.log(res.data)
+
             setProduct(res.data.product)
-            console.log(res.data.product)
         }).catch((error) => {
             //TODO Handle request error
             console.log("Error!")

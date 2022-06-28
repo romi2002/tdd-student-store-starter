@@ -21,7 +21,8 @@ export default function App() {
     const [selectedSort, setSortFunc] = useState('id-asc')
 
     useEffect(() => {
-        axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
+        axios.get('http://localhost:3001/store').then(res => {
+            console.log(res.data)
             setProduct(res.data.products)
             setShoppingCart(Array(res.data.products.length + 1).fill(0))
         })

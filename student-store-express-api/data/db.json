@@ -145,5 +145,300 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "test",
+      "email": "test",
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-06-28T17:30:21.774Z"
+    },
+    {
+      "id": 2,
+      "name": "test",
+      "email": "test",
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-06-28T17:30:41.565Z"
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "email": "test",
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-06-28T17:33:29.984Z"
+    },
+    {
+      "id": 4,
+      "name": "test",
+      "email": "test",
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-06-28T17:50:44.208Z"
+    },
+    {
+      "id": 5,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-06-28T17:50:58.548Z"
+    },
+    {
+      "id": 6,
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-06-28T17:51:20.474Z"
+    },
+    {
+      "id": 7,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:14:33.441Z"
+    },
+    {
+      "id": 8,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:22:59.554Z"
+    },
+    {
+      "id": 9,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:00.976Z"
+    },
+    {
+      "id": 10,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:01.709Z"
+    },
+    {
+      "id": 11,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:02.367Z"
+    },
+    {
+      "id": 12,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:02.792Z"
+    },
+    {
+      "id": 13,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:03.135Z"
+    },
+    {
+      "id": 14,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:03.461Z"
+    },
+    {
+      "id": 15,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:03.632Z"
+    },
+    {
+      "id": 16,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:04.339Z"
+    },
+    {
+      "id": 17,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "total": 8.1345,
+      "createdAt": "2022-06-28T18:23:04.689Z"
+    },
+    {
+      "id": 18,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "total": 11.668875,
+      "createdAt": "2022-06-28T18:23:07.470Z"
+    },
+    {
+      "id": 19,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "total": 11.668875,
+      "createdAt": "2022-06-28T18:23:08.142Z"
+    },
+    {
+      "id": 20,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "total": 11.668875,
+      "createdAt": "2022-06-28T18:23:08.659Z"
+    },
+    {
+      "id": 21,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "total": 11.668875,
+      "createdAt": "2022-06-28T18:23:09.241Z"
+    },
+    {
+      "id": 22,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "total": 15.203249999999999,
+      "createdAt": "2022-06-28T18:23:11.251Z"
+    },
+    {
+      "id": 23,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "total": 15.203249999999999,
+      "createdAt": "2022-06-28T18:23:11.884Z"
+    },
+    {
+      "id": 24,
+      "name": "Abiel",
+      "email": "email@gmail.com",
+      "order": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "total": 22.272,
+      "createdAt": "2022-06-28T18:23:14.384Z"
+    }
+  ]
 }
